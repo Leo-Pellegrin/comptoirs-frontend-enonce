@@ -20,7 +20,7 @@ class APIError extends Error {
  */
 async function doAjaxRequest(url, options) {
   // On fait l'appel AJAX
-  const response = await fetch(url, options);
+  const response = await fetch("https://tp-docker3.azurewebsites.net/" + url, options);
   // On récupère le résultat transmis en format JSON
   // 204 : NO-CONTENT, 404 : NOT_FOUND
   const result = [204, 404].includes(response.status) ? null : await response.json() ;
